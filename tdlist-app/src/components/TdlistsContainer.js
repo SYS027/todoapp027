@@ -12,7 +12,7 @@ class TdlistsContainer extends Component {
     }
     loadTdlists() {
         axios
-            .get("/api/version1/tdlists")
+            .get("https://todoapp027-0cf13cb8ff7b.herokuapp.com/api/version1/tdlists")
             .then((res) => {
                 this.setState({ tdlists: res.data });
             })
@@ -30,7 +30,7 @@ class TdlistsContainer extends Component {
     newTdlist = (e) => {
         if (e.key === "Enter" && !(e.target.value === "")) {
             axios
-                .post("/api/version1/tdlists", { tdlist: { title: e.target.value } })
+                .post("https://todoapp027-0cf13cb8ff7b.herokuapp.com/api/version1/tdlists", { tdlist: { title: e.target.value } })
                 .then((res) => {
                     const tdlists = update(this.state.tdlists, {
                         $splice: [[0, 0, res.data]],
@@ -46,7 +46,7 @@ class TdlistsContainer extends Component {
 
     modifyTdlist = (e, id) => {
         axios
-            .put(`/api/version1/tdlists/${id}`, { tdlist: { done: e.target.checked } })
+            .put(`https://todoapp027-0cf13cb8ff7b.herokuapp.com/api/version1/tdlists/${id}`, { tdlist: { done: e.target.checked } })
             .then((res) => {
                 const tdlistIndex = this.state.tdlists.findIndex(
                     (x) => x.id === res.data.id
@@ -63,7 +63,7 @@ class TdlistsContainer extends Component {
 
     removeTdlist = (id) => {
         axios
-            .delete(`/api/version1/tdlists/${id}`)
+            .delete(`https://todoapp027-0cf13cb8ff7b.herokuapp.com/api/version1/tdlists/${id}`)
             .then((res) => {
                 const tdlistIndex = this.state.tdlists.findIndex((x) => x.id === id);
                 const tdlists = update(this.state.tdlists, {
