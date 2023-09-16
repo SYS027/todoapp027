@@ -141,6 +141,11 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (7.0.8)
       actionpack (= 7.0.8)
       activesupport (= 7.0.8)
@@ -153,6 +158,7 @@ GEM
       psych (>= 4.0.0)
     reline (0.3.8)
       io-console (~> 0.5)
+    sqlite3 (1.6.6-x64-mingw-ucrt)
     stringio (3.0.8)
     thor (1.2.2)
     timeout (0.4.0)
@@ -175,6 +181,8 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.8)
+  rails_12factor
+  sqlite3
   tzinfo-data
 
 RUBY VERSION

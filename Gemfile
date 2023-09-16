@@ -9,11 +9,12 @@ gem "rails", "~> 7.0.8"
 gem 'rack-cors', :require => 'rack/cors'
 
 # Use mysql as the database for Active Record
-# gem "mysql2", "~> 0.5"
+gem "mysql2", "~> 0.5"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
+gem 'rails_12factor', group: :production
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
@@ -51,6 +52,5 @@ end
 
 group :production do
   # for production purposes
-
-  gem "mysql2", "~> 0.5"
+  gem 'sqlite3'
 end
